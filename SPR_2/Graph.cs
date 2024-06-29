@@ -22,26 +22,30 @@ public class Graph
         }
     }
 
-    public void Add(int vertex, int weight)
+    public void Add(int vertex, int dest)
     {
-        adj[vertex].Add(weight);
+        adj[vertex].Add(dest);
     }
 
-    public void Helper(int vertex, bool[] visited)
+    public void Helper(int vertex, bool[] visited, List<int> res)
     {
         visited[vertex] = true;
+        res.Add(vertex);
         foreach (int item in adj[vertex])
         {
             if (!visited[item])
             {
-                Helper(item, visited);
+                Helper(item, visited, res);
             }
         }
     }
 
-    public void BFS(int startPosition)
+    public List<int> BFS(int startPosition)
     {
+        List<int> res = new List<int>();
         bool[] visited = new bool[vertices];
-        Helper(1, visited);
+        Helper(startPosition, visited, res);
+        
+        return res;
     }
 }

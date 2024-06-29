@@ -22,12 +22,19 @@ public partial class MainForm : Form
     private int[] arr1;
     private List<int[]> steps = new List<int[]>();
     private int currentIndex = -1;
+    private Graph graph = new Graph(4);
 
     public MainForm()
     {
         InitializeComponent();
         dec = new Dec<int>();
         random = new Random();
+
+        graph.Add(0, 1);
+        graph.Add(0, 3);
+        graph.Add(1, 2);
+        graph.Add(2, 0);
+        graph.Add(2, 3);
     }
 
     private void UpdateTextBox()
@@ -180,8 +187,15 @@ public partial class MainForm : Form
     //**********************************************************************//
     private void buttonMatrix_Click(object sender, EventArgs e)
     {
-        textBoxExampleOfWork.Clear();
+        textBoxAlghoritm.Text += "0, 1" + "\r\n" + "0, 3" + "\r\n" + "1, 2" + "\r\n" + "2, 0" + "\r\n" + "2, 3";
 
+
+        listBoxExampleOfWork.Items.Clear();
+        List<int> result = graph.BFS(1);
+        foreach (var item in result)
+        {
+            listBoxExampleOfWork.Items.Add(item);
+        }
     }
 }
 

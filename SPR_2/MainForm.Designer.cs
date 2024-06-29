@@ -42,9 +42,9 @@
             textBoxAlghoritmSort = new TextBox();
             buttonStepForward = new Button();
             panel3 = new Panel();
+            listBoxExampleOfWork = new ListBox();
             textBoxInputGraph = new TextBox();
             buttonMatrix = new Button();
-            textBoxExampleOfWork = new TextBox();
             textBoxAlghoritm = new TextBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -182,25 +182,34 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(listBoxExampleOfWork);
             panel3.Controls.Add(textBoxInputGraph);
             panel3.Controls.Add(buttonMatrix);
-            panel3.Controls.Add(textBoxExampleOfWork);
             panel3.Controls.Add(textBoxAlghoritm);
-            panel3.Location = new Point(48, 291);
+            panel3.Location = new Point(48, 268);
             panel3.Name = "panel3";
-            panel3.Size = new Size(656, 125);
+            panel3.Size = new Size(656, 175);
             panel3.TabIndex = 2;
+            // 
+            // listBoxExampleOfWork
+            // 
+            listBoxExampleOfWork.FormattingEnabled = true;
+            listBoxExampleOfWork.ItemHeight = 20;
+            listBoxExampleOfWork.Location = new Point(372, 10);
+            listBoxExampleOfWork.Name = "listBoxExampleOfWork";
+            listBoxExampleOfWork.Size = new Size(263, 124);
+            listBoxExampleOfWork.TabIndex = 10;
             // 
             // textBoxInputGraph
             // 
-            textBoxInputGraph.Location = new Point(139, 85);
+            textBoxInputGraph.Location = new Point(139, 143);
             textBoxInputGraph.Name = "textBoxInputGraph";
             textBoxInputGraph.Size = new Size(125, 27);
             textBoxInputGraph.TabIndex = 9;
             // 
             // buttonMatrix
             // 
-            buttonMatrix.Location = new Point(14, 83);
+            buttonMatrix.Location = new Point(14, 141);
             buttonMatrix.Name = "buttonMatrix";
             buttonMatrix.Size = new Size(99, 29);
             buttonMatrix.TabIndex = 8;
@@ -208,20 +217,12 @@
             buttonMatrix.UseVisualStyleBackColor = true;
             buttonMatrix.Click += buttonMatrix_Click;
             // 
-            // textBoxExampleOfWork
-            // 
-            textBoxExampleOfWork.Location = new Point(327, 10);
-            textBoxExampleOfWork.Multiline = true;
-            textBoxExampleOfWork.Name = "textBoxExampleOfWork";
-            textBoxExampleOfWork.Size = new Size(294, 67);
-            textBoxExampleOfWork.TabIndex = 2;
-            // 
             // textBoxAlghoritm
             // 
             textBoxAlghoritm.Location = new Point(14, 10);
             textBoxAlghoritm.Multiline = true;
             textBoxAlghoritm.Name = "textBoxAlghoritm";
-            textBoxAlghoritm.Size = new Size(294, 67);
+            textBoxAlghoritm.Size = new Size(294, 125);
             textBoxAlghoritm.TabIndex = 1;
             // 
             // MainForm
@@ -254,7 +255,6 @@
         private Panel panel3;
         private TextBox textBoxAlghoritmSort;
         private Button buttonStepForward;
-        private TextBox textBoxExampleOfWork;
         private TextBox textBoxAlghoritm;
         private Button buttonPopTail;
         private Button buttonAddRandomTail;
@@ -263,5 +263,6 @@
         private Button buttonMatrix;
         private TextBox textBoxInputGraph;
         private TextBox textBoxSortTask;
+        private ListBox listBoxExampleOfWork;
     }
 }
